@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1199px) {
+  .container {
+    max-width: 900px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .container {
+    max-width: 500px;
+  }
+}
+
+.header {
+  padding: 50px 0;
+}
+.header .logo {
+  text-align: center;
+}
+.header nav {
+  margin-top: 10px;
+}
+.header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px;
+}
+.header nav ul li {
+  border-bottom: 1px solid transparent;
+}
+.header nav ul li:hover {
+  border-bottom: 1px solid black;
+}
+
+.main--content {
+  display: grid;
+  grid-template-areas: "one two" "one four" "three four" "five six" "five sekkiz" "seven sekkiz";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 1fr 3fr 3fr 1fr 3fr;
+  gap: 20px;
+  place-items: center;
+  justify-items: center;
+}
+@media only screen and (max-width: 991px) {
+  .main--content {
+    grid-template-columns: 1fr;
+    grid-template-areas: "one" "two" "three" "four" "five" "six" "seven" "eight";
+    grid-template-rows: repeat(8, 1fr);
+  }
+}
+.main--content .img1 {
+  grid-area: one;
+}
+.main--content .img2 {
+  grid-area: two;
+}
+.main--content .img3 {
+  grid-area: three;
+}
+.main--content .img4 {
+  grid-area: four;
+}
+.main--content .img5 {
+  grid-area: five;
+}
+.main--content .img6 {
+  grid-area: six;
+}
+.main--content .img7 {
+  grid-area: seven;
+}
+.main--content .img8 {
+  grid-area: sekkiz;
+}
+.main--content img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.footer {
+  padding: 150px 0;
+}
+.footer--content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 90px;
+}
+.footer--content svg {
+  width: 20px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+  
+    @include desktop {
+      max-width: 900px;
+    }
+  
+    @include tablet {
+      max-width: 500px;
+    }
+}
+
+.header{
+    padding: 50px 0;
+    .logo{
+        text-align: center;
+    }
+    nav{
+        margin-top: 10px;
+        ul{
+            @include d-flex;
+            gap: 30px;
+            li{
+                border-bottom: 1px solid transparent;
+            }
+
+            li:hover{
+                border-bottom: 1px solid black;
+            }
+        }
+    }
+}
+
+.main{
+    &--content{
+        display: grid;
+        grid-template-areas:
+        "one two"
+        "one four"
+        "three four"
+        "five six"
+        "five sekkiz"
+        "seven sekkiz";
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr 1fr 3fr 3fr 1fr 3fr;
+        gap: 20px;
+        place-items: center;
+        justify-items: center;
+
+        @include tablet{
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "one"
+            "two"
+            "three"
+            "four"
+            "five"
+            "six"
+            "seven"
+            "eight"
+            ;
+            grid-template-rows: repeat(8, 1fr);
+        }
+
+        // GRID AREAS
+
+        .img1{
+            grid-area: one;
+        }
+        .img2{
+            grid-area: two;
+        }
+        .img3{
+            grid-area: three;
+        }
+        .img4{
+            grid-area: four;
+        }
+        .img5{
+            grid-area: five;
+        }
+        .img6{
+            grid-area: six;
+        }
+        .img7{
+            grid-area: seven;
+        }
+        .img8{
+            grid-area: sekkiz;
+        }
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    
+    
+}
+
+
+.footer{
+    padding: 150px 0;
+    &--content{
+        @include d-flex;
+        gap: 90px;
+        svg{
+            width: 20px;
+        }
+    }
+}
